@@ -11,9 +11,10 @@ export class Sail {
         let total = 0;
 
         if(this.listOfProducts != []){
-            for (let product of this.listOfProducts) {
-                total = total +  product.price;
+            for (let price of this.listOfProducts) {
+                total = total + price ;
             }   
+
         }
         return total;
     }

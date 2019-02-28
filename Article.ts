@@ -1,6 +1,7 @@
 import { Product } from './Product';
 
 export class Article implements Product{
+
     name:string;
     price:number;
 
@@ -8,4 +9,12 @@ export class Article implements Product{
         this.name = name;
         this.price = price;
     }
+
+
+
+    howMuchFor(quantity:number) {
+        return this.price * quantity;
+    }
+
+
 }
