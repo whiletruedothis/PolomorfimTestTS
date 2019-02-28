@@ -34,7 +34,6 @@ test('must return 5 for a sail of a service and a article', () =>{
 
 test('must return 6 for 3 articles like milk', () =>{
     let milkPrice = new Article('milk',2).howMuchFor(3);
-  
     let listOfPrices = [milkPrice];
     let testSail = new Sail(listOfPrices);
     expect(testSail.getTotal()).toBe(6);
@@ -42,11 +41,19 @@ test('must return 6 for 3 articles like milk', () =>{
 
 test('must return 18 for 3 services like water', () =>{
     let waterPrice = new Service('water',3).howMuchFor(3);
-  
     let listOfPrices = [waterPrice];
     let testSail = new Sail(listOfPrices);
     expect(testSail.getTotal()).toBe(18);
 });
+
+test('must return 24 for 3 services like water and 3 articles like milk', () =>{
+    let waterPrice = new Service('water',3).howMuchFor(3);
+    let milkPrice = new Article('milk',2).howMuchFor(3);
+    let listOfPrices = [waterPrice,milkPrice];
+    let testSail = new Sail(listOfPrices);
+    expect(testSail.getTotal()).toBe(24);
+});
+
 
 
 
